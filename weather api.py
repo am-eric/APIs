@@ -16,12 +16,14 @@ weather_desc = api_data['weather'][0]['description']
 temp = (api_data['main']['temp'])-273.35
 formated_temp = "{:.2f}".format(temp)
 hmdt = api_data['main']['humidity']
-position = api_data['coord']
+long = api_data['coord']['lon']
+lat = api_data['coord']['lat']
 country = api_data['sys']['country']
 date_time = datetime.now().strftime("%d %b %Y| %I:%M:%S %p")
 
 print('******** Weather information ********:')
 print(f'{location},{country} on {date_time}')
+print(f'longitude: {long} latitude: {lat}')
 print('current temperature: ', formated_temp,'C')
 print('current weather desc: ', weather_desc)
 print('current Humidity: ', hmdt,'%')
